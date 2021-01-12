@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "lib": ["ESNext"],
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "target": "ESNext",
+    "module": "CommonJS",
+    "strict": true,
+    "noImplicitReturns": true,
+    "newLine": "LF"
+  },
+  "include": ["src/**/*.ts"]
+}

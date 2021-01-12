@@ -1,0 +1,5 @@
+node_modules/
+/dist/*.js
+index.js
+js.js
+sound.js
