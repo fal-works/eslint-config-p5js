@@ -1,6 +1,7 @@
+import stringSet = require("../string-set");
+import dirs = require("../data-directories");
 import util = require("./util");
 import p5Instance = require("./p5-instance");
-import p5Sound = require("./p5-sound");
 
 import type { Globals } from "../eslint-types";
 
@@ -12,7 +13,7 @@ type Permission = Globals[keyof Globals];
 /**
  * Generates `Globals` object from a list of read-only variable names.
  */
-const generateFromNames = (
+const createGlobals = (
   variableNames: string[],
   permission: Permission
 ): Globals => {
@@ -23,18 +24,35 @@ const generateFromNames = (
   return globals;
 };
 
-/**
- * Generates `Globals` object to be applied when using p5.js.
- */
-export const generate = async (): Promise<Globals> => {
-  const variableNames = util.getMaybePublicKeys(await p5Instance.create());
-  variableNames.sort();
-
-  return generateFromNames(variableNames, "readonly");
+/** Creates a JavaScript module code that exports `globals`. */
+const createExporterCode = (globals: Globals): string => {
+  const stringified = JSON.stringify(globals);
+  const replaced = stringified.replaceAll('"readonly"', "ro");
+  const code = `const ro = "readonly";\n\nmodule.exports=${replaced}`;
+  return code;
 };
 
 /**
- * Generates `Globals` object to be applied when using `p5.Sound`.
+ * Generates a JavaScript module code that exports a `Globals` object
+ * to be applied when using p5.js.
  */
-export const generateP5Sound = (): Globals =>
-  generateFromNames(p5Sound.variableNames, "readonly");
+export const generate = async (): Promise<string> => {
+  const variableNames = util.getMaybePublicKeys(await p5Instance.create());
+  variableNames.sort();
+
+  const globals = createGlobals(variableNames, "readonly");
+  return createExporterCode(globals);
+};
+
+/**
+ * Generates a JavaScript module code that exports a `Globals` object
+ * to be applied when using p5.Sound.
+ */
+export const generateP5Sound = async (): Promise<string> => {
+  const variableNames = await stringSet.read(
+    `${dirs.srcData}/sound-globals.yaml`
+  );
+
+  const globals = createGlobals(variableNames, "readonly");
+  return createExporterCode(globals);
+};

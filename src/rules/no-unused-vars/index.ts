@@ -5,7 +5,7 @@ import dirs = require("../../data-directories");
  * Generates a JavaScript module code that exports a pattern of variable names
  * that should pass the `no-unused-vars` rule.
  */
-export const generateAllowedPatternCode = async (): Promise<string> => {
+export const generateAllowedPattern = async (): Promise<string> => {
   const dataPath = `${dirs.srcData}/unused-var-allowed.yaml`;
   const variableNames = await stringSet.read(dataPath);
 
