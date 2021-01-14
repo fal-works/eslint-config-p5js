@@ -1,5 +1,5 @@
 devDependencies:
-  '@fal-works/tiny-logger': 0.1.0
+  '@fal-works/tiny-logger': 0.1.1
   '@types/eslint': 7.2.6
   '@types/js-yaml': 4.0.0
   '@types/jsdom': 16.2.6
@@ -55,10 +55,10 @@ packages:
       node: ^10.12.0 || >=12.0.0
     resolution:
       integrity: sha512-EfB5OHNYp1F4px/LI/FEnGylop7nOqkQ1LRzCM0KccA2U8tvV8w01KBv37LbO7nW4H+YhKyo2LcJhRwjjV17QQ==
-  /@fal-works/tiny-logger/0.1.0:
+  /@fal-works/tiny-logger/0.1.1:
     dev: true
     resolution:
-      integrity: sha512-0P1yOV6L9w5rVeG/EK8gTCiVjnMk3fGOKjab2++Xf3f7ppCQS1wQEzBu7KL9Xlxzz2/HUTp+89qVywx8FcVHVQ==
+      integrity: sha512-Ct18PyaNs2Ht+p9bPB/qIuML5Vky21GQDJW+bqeLW6Qsx2IJZn1Q4M1QsCUNgZzPFMha4IGQnNmSPCAAX6sjtg==
   /@nodelib/fs.scandir/2.1.4:
     dependencies:
       '@nodelib/fs.stat': 2.0.4
@@ -2522,7 +2522,7 @@ packages:
     resolution:
       integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
 specifiers:
-  '@fal-works/tiny-logger': ^0.1.0
+  '@fal-works/tiny-logger': ^0.1.1
   '@types/eslint': ^7.2.6
   '@types/js-yaml': ^4.0.0
   '@types/jsdom': ^16.2.6
