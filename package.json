@@ -1,6 +1,6 @@
 {
   "name": "@fal-works/eslint-config-p5js",
-  "description": "ESLint config for p5.js global mode. Supports TypeScript.",
+  "description": "ESLint config for p5.js global mode. Supports TypeScript as well.",
   "version": "0.1.0",
   "license": "MIT",
   "author": "FAL",
@@ -13,11 +13,11 @@
     "url": "https://github.com/fal-works/eslint-config-p5js/issues"
   },
   "files": [
-    "data",
-    "index.js",
-    "@typescript-eslint.js",
-    "data-sound",
-    "sound.js"
+    "/data/",
+    "/index.js",
+    "/@typescript-eslint.js",
+    "/data-sound/",
+    "/sound.js"
   ],
   "main": "index.js",
   "devDependencies": {
