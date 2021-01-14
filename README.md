@@ -65,3 +65,11 @@ This will add globals that are specific to p5.sound.
   ]
 }
 ```
+
+
+## Other
+
+Similar libraries:
+
+- <https://www.npmjs.com/package/eslint-plugin-p5js> (not a config but a plugin)
+- <https://www.npmjs.com/package/eslint-config-p5js> (not a scoped one)
