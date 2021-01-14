@@ -38,8 +38,8 @@ export const generateAll = async (): Promise<void> => {
 
   await generateParallel([
     {
-      filepath: `${dirs.noUnusedVars}/allowed-pattern.js`,
-      generator: rules.noUnusedVars.generateAllowedPattern,
+      filepath: `${dirs.noUnusedVars}/ignore-pattern.js`,
+      generator: rules.noUnusedVars.generateIgnorePattern,
     },
     {
       filepath: `${dirs.globals}/index.js`,
