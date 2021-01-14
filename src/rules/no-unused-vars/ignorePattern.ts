@@ -14,5 +14,5 @@ export const generate = async (): Promise<string> => {
   code.push(`const pattern = variablenames.join("|");`);
   code.push(`module.exports = pattern;\n`);
 
-  return code.join("\n");
+  return code.join("\n\n");
 };
