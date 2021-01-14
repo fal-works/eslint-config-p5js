@@ -1,6 +1,7 @@
 # @fal-works/eslint-config-p5js
 
-ESLint config for p5.js. Supports TypeScript as well.
+[ESLint](https://eslint.org/) config for [p5.js](https://p5js.org/).
+Supports [TypeScript](https://www.typescriptlang.org/) as well.
 
 ## Install
 
@@ -20,7 +21,7 @@ pnpm add --save-dev @fal-works/eslint-config-p5js
 
 ### Basic config
 
-Add "p5js" to the `extends` list in your `eslintrc`.
+Add the config name "p5js" to the `extends` list in your `eslintrc`.
 
 This will add some globals and also overwrite the "no-unused-vars" rule.
 
@@ -35,9 +36,9 @@ This will add some globals and also overwrite the "no-unused-vars" rule.
 
 ### With TypeScript
 
-If you use TypeScript (and the `@typescript-eslint` plugin), add "p5js/@typescript-eslint" as well.
+If you use TypeScript (and the [@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) plugin), add "p5js/@typescript-eslint" as well.
 
-This overwrites the "@typescript-eslint/no-unused-vars" rule for p5.js (however note that globals will not be added).
+This overwrites the "@typescript-eslint/no-unused-vars" rule for p5.js. No additional globals.
 
 ```json
 {
