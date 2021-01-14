@@ -21,7 +21,7 @@ pnpm add --save-dev @fal-works/eslint-config-p5js
 
 ### Basic config
 
-Add the config name "p5js" to the `extends` list in your `eslintrc`.
+Add the config name "@fal-works/p5js" to the `extends` list in your `eslintrc`.
 
 This will add some globals and also overwrite the "no-unused-vars" rule.
 
@@ -29,7 +29,7 @@ This will add some globals and also overwrite the "no-unused-vars" rule.
 {
   "extends": [
     "eslint:recommended", // any other config
-    "p5js" // this should come after the above
+    "@fal-works/p5js" // this should come after the above
   ]
 }
 ```
@@ -44,9 +44,9 @@ This overwrites the "@typescript-eslint/no-unused-vars" rule for p5.js. No addit
 {
   "extends": [
     "eslint:recommended",
-    "p5js",
+    "@fal-works/p5js",
     "plugin:@typescript-eslint/recommended",
-    "p5js/@typescript-eslint", // this should come after the above
+    "@fal-works/p5js/@typescript-eslint", // this should come after the above
   ]
 }
 ```
@@ -61,8 +61,8 @@ This will add globals that are specific to p5.sound.
 {
   "extends": [
     "eslint:recommended",
-    "p5js",
-    "p5js/sound",
+    "@fal-works/p5js",
+    "@fal-works/p5js/sound",
   ]
 }
 ```
