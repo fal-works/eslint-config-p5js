@@ -3,6 +3,7 @@
 [ESLint](https://eslint.org/) config for [p5.js](https://p5js.org/).
 Supports [TypeScript](https://www.typescriptlang.org/) as well.
 
+
 ## Install
 
 ```shell
@@ -16,6 +17,7 @@ yarn add --dev @fal-works/eslint-config-p5js
 ```shell
 pnpm add --save-dev @fal-works/eslint-config-p5js
 ```
+
 
 ## Usage
 
@@ -39,7 +41,7 @@ So this should come after other extensions which also include "no-unused-vars".
 
 If you use TypeScript (and the [@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) plugin), add "p5js/@typescript-eslint" as well.
 
-This overwrites the "@typescript-eslint/no-unused-vars" rule for p5.js (no additional globals).  
+This will overwrite the "@typescript-eslint/no-unused-vars" rule for p5.js (no additional globals).  
 So this should come after other extensions which also include "@typescript-eslint/no-unused-vars".
 
 ```json
