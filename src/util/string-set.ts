@@ -16,8 +16,14 @@ const validateUnique = <T>(array: T[]) => {
     throw new Error(`Found duplicated elements: ${array}`);
 };
 
-export const read = async (filepath: fs.PathLike): Promise<string[]> => {
-  const fileContent = await fs.promises.readFile(filepath);
+/**
+ * Reads a YAML file that is a flat sequence of unique `string`s.
+ * @throws Error if data is invalid.
+ */
+export const readStringSet = async (
+  yamlFilepath: fs.PathLike
+): Promise<string[]> => {
+  const fileContent = await fs.promises.readFile(yamlFilepath);
   const rawData = jsYaml.load(fileContent.toString());
   const list = validateStringArray(rawData);
   validateUnique(list);

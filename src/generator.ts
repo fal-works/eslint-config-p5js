@@ -2,7 +2,7 @@ import fs = require("fs");
 import rules = require("./rules");
 import globals = require("./globals");
 import dirs = require("./data-directories");
-import { error, log } from "./logger";
+import util = require("./util");
 
 type GenerateTask = {
   filepath: string;
@@ -17,9 +17,9 @@ const generate = async (task: GenerateTask) => {
 
   try {
     await fs.promises.writeFile(filepath, code);
-    log(`generated: ${filepath}`);
+    util.log(`generated: ${filepath}`);
   } catch (err) {
-    error(`failed to generate: ${filepath}`);
+    util.error(`failed to generate: ${filepath}`);
     throw err;
   }
 };

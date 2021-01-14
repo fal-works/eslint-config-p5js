@@ -1,6 +1,5 @@
-import stringSet = require("../string-set");
 import dirs = require("../data-directories");
-import util = require("./util");
+import util = require("../util");
 import p5Instance = require("./p5-instance");
 import convert = require("./convert");
 
@@ -20,7 +19,7 @@ export const generate = async (): Promise<string> => {
  * to be applied when using p5.Sound.
  */
 export const generateP5Sound = async (): Promise<string> => {
-  const variableNames = await stringSet.read(
+  const variableNames = await util.readStringSet(
     `${dirs.paths.srcData.path}/sound-globals.yaml`
   );
 

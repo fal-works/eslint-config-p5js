@@ -1,4 +1,4 @@
-import stringSet = require("../../string-set");
+import util = require("../../util");
 import dirs = require("../../data-directories");
 
 /**
@@ -7,7 +7,7 @@ import dirs = require("../../data-directories");
  */
 export const generate = async (): Promise<string> => {
   const dataPath = `${dirs.paths.srcData.path}/unused-var-ignore.yaml`;
-  const variableNames = await stringSet.read(dataPath);
+  const variableNames = await util.readStringSet(dataPath);
 
   const code: string[] = [];
   code.push(`const variablenames = ${JSON.stringify(variableNames)}`);

@@ -1,5 +1,5 @@
 import { generateAll } from "./generator";
-import { log, error } from "./logger";
+import { log, error } from "./util/logger";
 
 /**
  * Runs the entire generator script.
