@@ -1,6 +1,6 @@
 {
-  "name": "eslint-config-p5js-typescript",
-  "description": "ESLint config for p5.js global mode with TypeScript.",
+  "name": "@fal-works/eslint-config-p5js",
+  "description": "ESLint config for p5.js global mode. Supports TypeScript.",
   "version": "0.1.0",
   "license": "MIT",
   "author": "FAL",
@@ -8,9 +8,9 @@
     "eslint",
     "eslintconfig"
   ],
-  "homepage": "https://github.com/fal-works/eslint-config-p5js-typescript#readme",
+  "homepage": "https://github.com/fal-works/eslint-config-p5js#readme",
   "bugs": {
-    "url": "https://github.com/fal-works/eslint-config-p5js-typescript/issues"
+    "url": "https://github.com/fal-works/eslint-config-p5js/issues"
   },
   "files": [
     "index.js",
