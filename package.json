@@ -19,16 +19,22 @@
   ],
   "main": "index.js",
   "devDependencies": {
+    "@fal-works/tiny-logger": "C:\\Dev\\misc\\tiny-logger-js",
     "@types/eslint": "^7.2.6",
+    "@types/js-yaml": "^4.0.0",
     "@types/jsdom": "^16.2.6",
     "@types/node": "*",
     "@types/p5": "^0.9.1",
+    "@types/prettier": "^2.1.6",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
+    "ajv": "^7.0.3",
     "canvas": "^2.6.1",
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^7.1.0",
+    "js-yaml": "^4.0.0",
     "jsdom": "^16.4.0",
+    "npm-run-all": "^4.1.5",
     "p5": "^1.2.0",
     "prettier": "^2.2.1",
     "ts-node": "^9.1.1",
@@ -38,6 +44,10 @@
     "eslint": ">= 7"
   },
   "scripts": {
-    "build": "ts-node-script src/index.ts"
+    "build": "run-s generate format:dist",
+    "generate": "ts-node-script src/index.ts",
+    "format:dist": "run-p format:dist:*",
+    "format:dist:data": "eslint --fix data && prettier --write data",
+    "format:dist:data-sound": "eslint --fix data-sound && prettier --write data-sound"
   }
 }

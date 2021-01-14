@@ -1,21 +1,21 @@
-import generator = require("./generator");
-import log = require("./log");
+import { generateAll } from "./generator";
+import { log, error } from "./logger";
 
 /**
  * Runs the entire generator script.
  */
 const run = async () => {
-  log.emit("start generating...");
+  log("start generating...");
 
   try {
-    await generator.generateAll();
+    await generateAll();
   } catch (err: any) {
-    log.emitError(err);
-    log.emitError("aborting due to failure.");
+    error(err);
+    error("aborting due to failure.");
     process.exit(1);
   }
 
-  log.emit("completed.");
+  log("completed.");
   process.exit(0);
 };
 

@@ -1,17 +1,11 @@
-/**
- * List of variable names that should pass `no-unused-vars`.
- */
-export const variableNames = [
+const variablenames = [
   "preload",
   "setup",
   "draw",
-
   "windowResized",
-
   "keyTyped",
   "keyPressed",
   "keyReleased",
-
   "mouseMoved",
   "mouseDragged",
   "mousePressed",
@@ -19,12 +13,12 @@ export const variableNames = [
   "mouseClicked",
   "doubleClicked",
   "mouseWheel",
-
   "touchStarted",
   "touchMoved",
   "touchEnded",
-
   "deviceMoved",
   "deviceTurned",
   "deviceShaken",
 ];
+const pattern = variablenames.join("|");
+module.exports = pattern;
