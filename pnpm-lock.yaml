@@ -1,5 +1,5 @@
 devDependencies:
-  '@fal-works/tiny-logger': link:../../../misc/tiny-logger-js
+  '@fal-works/tiny-logger': 0.1.0
   '@types/eslint': 7.2.6
   '@types/js-yaml': 4.0.0
   '@types/jsdom': 16.2.6
@@ -8,7 +8,6 @@ devDependencies:
   '@types/prettier': 2.1.6
   '@typescript-eslint/eslint-plugin': 4.13.0_b7210263e693dcacb9967ef540d4f052
   '@typescript-eslint/parser': 4.13.0_eslint@7.17.0+typescript@4.1.3
-  ajv: 7.0.3
   canvas: 2.6.1
   eslint: 7.17.0
   eslint-config-prettier: 7.1.0_eslint@7.17.0
@@ -56,6 +55,10 @@ packages:
       node: ^10.12.0 || >=12.0.0
     resolution:
       integrity: sha512-EfB5OHNYp1F4px/LI/FEnGylop7nOqkQ1LRzCM0KccA2U8tvV8w01KBv37LbO7nW4H+YhKyo2LcJhRwjjV17QQ==
+  /@fal-works/tiny-logger/0.1.0:
+    dev: true
+    resolution:
+      integrity: sha512-0P1yOV6L9w5rVeG/EK8gTCiVjnMk3fGOKjab2++Xf3f7ppCQS1wQEzBu7KL9Xlxzz2/HUTp+89qVywx8FcVHVQ==
   /@nodelib/fs.scandir/2.1.4:
     dependencies:
       '@nodelib/fs.stat': 2.0.4
@@ -2519,7 +2522,7 @@ packages:
     resolution:
       integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
 specifiers:
-  '@fal-works/tiny-logger': C:\Dev\misc\tiny-logger-js
+  '@fal-works/tiny-logger': ^0.1.0
   '@types/eslint': ^7.2.6
   '@types/js-yaml': ^4.0.0
   '@types/jsdom': ^16.2.6
@@ -2528,7 +2531,6 @@ specifiers:
   '@types/prettier': ^2.1.6
   '@typescript-eslint/eslint-plugin': ^4.13.0
   '@typescript-eslint/parser': ^4.13.0
-  ajv: ^7.0.3
   canvas: ^2.6.1
   eslint: ^7.17.0
   eslint-config-prettier: ^7.1.0

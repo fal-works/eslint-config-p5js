@@ -19,7 +19,7 @@
   ],
   "main": "index.js",
   "devDependencies": {
-    "@fal-works/tiny-logger": "C:\\Dev\\misc\\tiny-logger-js",
+    "@fal-works/tiny-logger": "^0.1.0",
     "@types/eslint": "^7.2.6",
     "@types/js-yaml": "^4.0.0",
     "@types/jsdom": "^16.2.6",
@@ -28,7 +28,6 @@
     "@types/prettier": "^2.1.6",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
-    "ajv": "^7.0.3",
     "canvas": "^2.6.1",
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^7.1.0",
