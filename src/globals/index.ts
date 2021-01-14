@@ -50,7 +50,7 @@ export const generate = async (): Promise<string> => {
  */
 export const generateP5Sound = async (): Promise<string> => {
   const variableNames = await stringSet.read(
-    `${dirs.srcData}/sound-globals.yaml`
+    `${dirs.paths.srcData.path}/sound-globals.yaml`
   );
 
   const globals = createGlobals(variableNames, "readonly");

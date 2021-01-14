@@ -1,40 +1,60 @@
 import fs = require("fs");
 
-// paths of data
-export const data = "data";
-export const globals = `${data}/globals`;
-export const rules = `${data}/rules`;
-export const noUnusedVars = `${rules}/no-unused-vars`;
+/** Object that represents a directory. Might contain sub-directories. */
+type Directory = { path: string };
 
-// paths of data for p5.Sound
-export const dataP5Sound = "data-sound";
-export const globalsP5Sound = `${dataP5Sound}/globals`;
+/** OMG what's that */
+export const paths = (() => {
+  const data = "data";
+  const data_globals = `${data}/globals`;
+  const data_rules = `${data}/rules`;
+  const data_rules_noUnusedVars = `${data_rules}/no-unused-vars`;
 
-// paths of source data
-export const srcData = "src-data";
+  const dataP5Sound = "data-sound";
+  const dataP5Sound_globals = `${dataP5Sound}/globals`;
+
+  const srcData = "src-data";
+
+  return {
+    data: {
+      path: data,
+      globals: { path: data_globals },
+      rules: {
+        path: data_rules,
+        noUnusedVars: { path: data_rules_noUnusedVars },
+      },
+    },
+    dataP5Sound: {
+      path: dataP5Sound,
+      globals: { path: dataP5Sound_globals },
+    },
+    srcData: { path: srcData },
+  };
+})();
 
 /** Runs `rm()` with `recursive` and `force`. */
-const rmdir = (path: string) =>
-  fs.promises.rm(path, { recursive: true, force: true });
+const rmdir = (directory: Directory) =>
+  fs.promises.rm(directory.path, { recursive: true, force: true });
 
 /** Runs `mkdir()` with `recursive`. */
-const mkdir = (path: string) => fs.promises.mkdir(path, { recursive: true });
+const mkdir = (directory: Directory) =>
+  fs.promises.mkdir(directory.path, { recursive: true });
 
 const cleanData = async (remakeSubDirs = true) => {
-  await rmdir(data);
+  await rmdir(paths.data);
 
   if (!remakeSubDirs) return;
 
-  await mkdir(globals);
-  await mkdir(noUnusedVars);
+  await mkdir(paths.data.globals);
+  await mkdir(paths.data.rules.noUnusedVars);
 };
 
 const cleanDataP5Sound = async (remakeSubDirs = true) => {
-  await rmdir(dataP5Sound);
+  await rmdir(paths.dataP5Sound);
 
   if (!remakeSubDirs) return;
 
-  await mkdir(globalsP5Sound);
+  await mkdir(paths.dataP5Sound.globals);
 };
 
 /** Clean up all distribution data. */

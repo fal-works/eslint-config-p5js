@@ -36,21 +36,19 @@ const generateParallel = async (tasks: GenerateTask[]) => {
 export const generateAll = async (): Promise<void> => {
   await dirs.cleanUp();
 
+  const { data, dataP5Sound } = dirs.paths;
+
   await generateParallel([
     {
-      filepath: `${dirs.rules}/index.js`,
-      generator: rules.generateIndex,
-    },
-    {
-      filepath: `${dirs.noUnusedVars}/ignore-pattern.js`,
+      filepath: `${data.rules.noUnusedVars.path}/ignore-pattern.js`,
       generator: rules.noUnusedVars.generateIgnorePattern,
     },
     {
-      filepath: `${dirs.globals}/index.js`,
+      filepath: `${data.globals.path}/index.js`,
       generator: globals.generate,
     },
     {
-      filepath: `${dirs.globalsP5Sound}/index.js`,
+      filepath: `${dataP5Sound.globals.path}/index.js`,
       generator: globals.generateP5Sound,
     },
   ]);
