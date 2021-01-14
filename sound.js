@@ -1,5 +1,5 @@
-const globals = require("./data-sound/globals");
+const p5SoundGlobals = require("./data-sound/globals");
 
 module.exports = {
-  globals,
+  globals: p5SoundGlobals,
 };

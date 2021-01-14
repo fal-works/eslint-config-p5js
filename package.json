@@ -13,8 +13,10 @@
     "url": "https://github.com/fal-works/eslint-config-p5js/issues"
   },
   "files": [
+    "data",
     "index.js",
-    "js.js",
+    "@typescript-eslint.js",
+    "data-sound",
     "sound.js"
   ],
   "main": "index.js",

@@ -3,7 +3,7 @@ const globals = require("./data/globals");
 
 module.exports = {
   rules: {
-    "@typescript-eslint/no-unused-vars": [
+    "no-unused-vars": [
       "error",
       {
         varsIgnorePattern: noUnusedVarsIgnore,
