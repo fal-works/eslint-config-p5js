@@ -16,7 +16,7 @@ export const generate = async (): Promise<string> => {
 
 /**
  * Generates a JavaScript module code that exports a `Globals` object
- * to be applied when using p5.Sound.
+ * to be applied when using p5.sound.
  */
 export const generateP5Sound = async (): Promise<string> => {
   const variableNames = await util.readStringSet(

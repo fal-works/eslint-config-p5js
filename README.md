@@ -50,11 +50,11 @@ This overwrites the "@typescript-eslint/no-unused-vars" rule for p5.js (however 
 }
 ```
 
-### With p5.Sound
+### With p5.sound
 
-If you use p5.Sound, add "p5js/sound" as well.
+If you use p5.sound, add "p5js/sound" as well.
 
-This will add globals that are specific to p5.Sound.
+This will add globals that are specific to p5.sound.
 
 ```json
 {
