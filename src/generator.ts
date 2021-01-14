@@ -41,7 +41,7 @@ export const generateAll = async (): Promise<void> => {
   await generateParallel([
     {
       filepath: `${data.rules.noUnusedVars.path}/ignore-pattern.js`,
-      generator: rules.noUnusedVars.generateIgnorePattern,
+      generator: rules.noUnusedVars.generate,
     },
     {
       filepath: `${data.globals.path}/index.js`,
