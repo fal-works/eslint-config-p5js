@@ -23,13 +23,14 @@ pnpm add --save-dev @fal-works/eslint-config-p5js
 
 Add the config name "@fal-works/p5js" to the `extends` list in your `eslintrc`.
 
-This will add some globals and also overwrite the "no-unused-vars" rule.
+This will add some globals and also overwrite the "no-unused-vars" rule.  
+So this should come after other extensions which also include "no-unused-vars".
 
 ```json
 {
   "extends": [
-    "eslint:recommended", // any other config
-    "@fal-works/p5js" // this should come after the above
+    "eslint:recommended",
+    "@fal-works/p5js"
   ]
 }
 ```
@@ -38,7 +39,8 @@ This will add some globals and also overwrite the "no-unused-vars" rule.
 
 If you use TypeScript (and the [@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) plugin), add "p5js/@typescript-eslint" as well.
 
-This overwrites the "@typescript-eslint/no-unused-vars" rule for p5.js. No additional globals.
+This overwrites the "@typescript-eslint/no-unused-vars" rule for p5.js (no additional globals).
+So this should come after other extensions which also include "@typescript-eslint/no-unused-vars".
 
 ```json
 {
@@ -46,7 +48,7 @@ This overwrites the "@typescript-eslint/no-unused-vars" rule for p5.js. No addit
     "eslint:recommended",
     "@fal-works/p5js",
     "plugin:@typescript-eslint/recommended",
-    "@fal-works/p5js/@typescript-eslint", // this should come after the above
+    "@fal-works/p5js/@typescript-eslint",
   ]
 }
 ```
