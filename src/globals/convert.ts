@@ -19,11 +19,13 @@ const createGlobals = (
   return globals;
 };
 
+const readonly: Permission = "readonly";
+
 /** Creates a JavaScript module code that exports `globals`. */
 const createExporterCode = (globals: Globals): string => {
   const stringified = JSON.stringify(globals);
-  const replaced = stringified.replaceAll('"readonly"', "ro");
-  const code = `const ro = "readonly";\n\nmodule.exports=${replaced}`;
+  const replaced = stringified.replaceAll(`"${readonly}"`, "ro");
+  const code = `const ro = "${readonly}";\n\nmodule.exports=${replaced}`;
   return code;
 };
 
@@ -32,6 +34,6 @@ const createExporterCode = (globals: Globals): string => {
  * that exports a `Global` object.
  */
 export const from = (names: string[]): string => {
-  const globals = createGlobals(names, "readonly");
+  const globals = createGlobals(names, readonly);
   return createExporterCode(globals);
 };
