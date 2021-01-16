@@ -21,7 +21,7 @@
   ],
   "main": "index.js",
   "devDependencies": {
-    "@fal-works/tiny-logger": "^0.1.1",
+    "@fal-works/tiny-logger": "^0.1.2",
     "@types/eslint": "^7.2.6",
     "@types/js-yaml": "^4.0.0",
     "@types/jsdom": "^16.2.6",
