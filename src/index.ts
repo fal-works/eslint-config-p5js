@@ -9,7 +9,7 @@ const run = async () => {
 
   try {
     await generateAll();
-  } catch (err: any) {
+  } catch (err: unknown) {
     error(err);
     error("aborting due to failure.");
     process.exit(1);

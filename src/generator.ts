@@ -18,7 +18,7 @@ const generate = async (task: GenerateTask) => {
   try {
     await fs.promises.writeFile(filepath, code);
     util.log(`generated: ${filepath}`);
-  } catch (err) {
+  } catch (err: unknown) {
     util.error(`failed to generate: ${filepath}`);
     throw err;
   }
