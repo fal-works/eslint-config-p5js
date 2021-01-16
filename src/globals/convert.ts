@@ -24,16 +24,16 @@ const readonly: Permission = "readonly";
 /** Creates a JavaScript module code that exports `globals`. */
 const createExporterCode = (globals: Globals): string => {
   const stringified = JSON.stringify(globals);
-  const replaced = stringified.replaceAll(`"${readonly}"`, "ro");
-  const code = `const ro = "${readonly}";\n\nmodule.exports=${replaced}`;
-  return code;
+
+  const replacer = new RegExp(`"${readonly}"`, "g");
+  const replaced = stringified.replace(replacer, "ro");
+
+  return `const ro = "${readonly}";\n\nmodule.exports=${replaced}`;
 };
 
 /**
  * Converts a list of variable names to a JavaScript code
  * that exports a `Global` object.
  */
-export const from = (names: string[]): string => {
-  const globals = createGlobals(names, readonly);
-  return createExporterCode(globals);
-};
+export const from = (names: string[]): string =>
+  createExporterCode(createGlobals(names, readonly));
