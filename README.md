@@ -37,27 +37,9 @@ So this should come after other extensions which also include "no-unused-vars".
 }
 ```
 
-### With TypeScript
-
-If you use TypeScript (and the [@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) plugin), add "p5js/@typescript-eslint" as well.
-
-This will overwrite the "@typescript-eslint/no-unused-vars" rule for p5.js (no additional globals).  
-So this should come after other extensions which also include "@typescript-eslint/no-unused-vars".
-
-```json
-{
-  "extends": [
-    "eslint:recommended",
-    "@fal-works/p5js",
-    "plugin:@typescript-eslint/recommended",
-    "@fal-works/p5js/@typescript-eslint",
-  ]
-}
-```
-
 ### With p5.sound
 
-If you use p5.sound, add "p5js/sound" as well.
+If you use p5.sound, add the config name "@fal-works/p5js/sound" as well.
 
 This will add globals that are specific to p5.sound.
 
@@ -70,6 +52,26 @@ This will add globals that are specific to p5.sound.
   ]
 }
 ```
+
+### With TypeScript
+
+If you use TypeScript (and the [@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) plugin), use the config name "@fal-works/p5js/@typescript-eslint" instead.
+
+This will overwrite the "@typescript-eslint/no-unused-vars" rule for p5.js.  
+So this should come after other extensions which also include "@typescript-eslint/no-unused-vars".
+
+```json
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "@fal-works/p5js/@typescript-eslint",
+  ]
+}
+```
+
+This config does not add globals, nor does it need to; they should be managed by [@types/p5](https://www.npmjs.com/package/@types/p5), the type declaration for p5.js.  
+However, the type declaration might not be always up to date; sometimes you might have to escape some variables (that are not properly declared) with `any`, or provide additional type declaration yourself.
 
 
 ## Other
