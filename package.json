@@ -1,7 +1,7 @@
 {
   "name": "@fal-works/eslint-config-p5js",
   "description": "ESLint config for p5.js global mode. Supports TypeScript as well.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "author": "FAL",
   "keywords": [
