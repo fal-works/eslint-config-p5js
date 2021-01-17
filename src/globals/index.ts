@@ -10,10 +10,10 @@ import convert = require("./convert");
 export const generate = async (): Promise<string> => {
   const p5FieldNames = util.getMaybePublicKeys(await p5Instance.create());
   const otherGlobalNames = ["p5"];
-  const variableNames = otherGlobalNames.concat(p5FieldNames);
-  variableNames.sort();
+  const names = otherGlobalNames.concat(p5FieldNames);
+  names.sort();
 
-  return convert.from(variableNames);
+  return convert.from(names);
 };
 
 /**
@@ -21,9 +21,9 @@ export const generate = async (): Promise<string> => {
  * to be applied when using p5.sound.
  */
 export const generateP5Sound = async (): Promise<string> => {
-  const variableNames = await util.readStringSet(
+  const names = await util.readStringSet(
     `${dirs.paths.srcData.path}/sound-globals.yaml`
   );
 
-  return convert.from(variableNames);
+  return convert.from(names);
 };
