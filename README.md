@@ -78,5 +78,5 @@ However, the type declaration might not be always up to date; sometimes you migh
 
 Similar libraries:
 
-- <https://www.npmjs.com/package/eslint-plugin-p5js> (not a config but a plugin)
-- <https://www.npmjs.com/package/eslint-config-p5js> (not a scoped one)
+- <https://www.npmjs.com/package/eslint-plugin-p5js> by marksherman (not a config but a plugin)
+- <https://www.npmjs.com/package/eslint-config-p5js> by yangsu (not a scoped one)
