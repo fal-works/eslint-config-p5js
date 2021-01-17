@@ -4,7 +4,7 @@ const globals = require("./data/globals");
 module.exports = {
   rules: {
     "no-unused-vars": [
-      "error",
+      "warn",
       {
         varsIgnorePattern: noUnusedVarsIgnore,
       },
