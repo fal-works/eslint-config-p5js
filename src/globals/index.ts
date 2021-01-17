@@ -8,7 +8,9 @@ import convert = require("./convert");
  * to be applied when using p5.js.
  */
 export const generate = async (): Promise<string> => {
-  const variableNames = util.getMaybePublicKeys(await p5Instance.create());
+  const p5FieldNames = util.getMaybePublicKeys(await p5Instance.create());
+  const otherGlobalNames = ["p5"];
+  const variableNames = otherGlobalNames.concat(p5FieldNames);
   variableNames.sort();
 
   return convert.from(variableNames);
