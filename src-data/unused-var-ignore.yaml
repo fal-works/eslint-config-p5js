@@ -1,4 +1,4 @@
-# p5.js functions that can be defined by user,
+# patterns of p5.js functions that can be defined by user,
 # which should be ignored by the "no-unused-vars" rule.
 
 - preload
@@ -7,22 +7,9 @@
 
 - windowResized
 
-- keyTyped
-- keyPressed
-- keyReleased
-
-- mouseMoved
-- mouseDragged
-- mousePressed
-- mouseReleased
-- mouseClicked
+- key(?:Typed|Pressed|Released)
+- mouse(?:Moved|Dragged|Pressed|Released|Clicked|Wheel)
 - doubleClicked
-- mouseWheel
+- touch(?:Started|Moved|Ended)
 
-- touchStarted
-- touchMoved
-- touchEnded
-
-- deviceMoved
-- deviceTurned
-- deviceShaken
+- device(?:Moved|Turned|Shaken)

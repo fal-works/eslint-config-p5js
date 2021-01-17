@@ -7,12 +7,9 @@ import dirs = require("../../data-directories");
  */
 export const generate = async (): Promise<string> => {
   const dataPath = `${dirs.paths.srcData.path}/unused-var-ignore.yaml`;
-  const variableNames = await util.readStringSet(dataPath);
+  const patternList = await util.readStringSet(dataPath);
 
-  const code: string[] = [];
-  code.push(`const variablenames = ${JSON.stringify(variableNames)}`);
-  code.push(`const pattern = variablenames.join("|");`);
-  code.push(`module.exports = pattern;\n`);
+  const pattern = `\\\\b(?:${patternList.join("|")})\\\\b`;
 
-  return code.join("\n\n");
+  return `module.exports = \"${pattern}\";\n`;
 };
