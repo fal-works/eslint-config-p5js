@@ -6,7 +6,7 @@ import dirs = require("../../data-directories");
  * that should pass the `no-unused-vars` rule.
  */
 export const generate = async (): Promise<string> => {
-  const dataPath = `${dirs.paths.srcData.path}/unused-var-ignore.yaml`;
+  const dataPath = `${dirs.paths.srcData.path}/unused-vars-ignore.yaml`;
   const patternList = await util.readStringSet(dataPath);
 
   const pattern = `\\\\b(?:${patternList.join("|")})\\\\b`;
